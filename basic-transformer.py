@@ -265,10 +265,12 @@ criteria = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 # optimizer = torch.optim.SGD(model.parameters(), lr=3e-4)
 
+# %%
+
 total_loss = 0
 
 step = 0
-for i in range(40000):
+for i in range(100000):
     # 生成数据
     src, tgt, tgt_y, n_tokens, names = generate_random_batch(batch_size=40)
     src = src.to('cuda')
